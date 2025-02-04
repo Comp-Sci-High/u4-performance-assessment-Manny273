@@ -1,0 +1,90 @@
+/* Styling for jobs.ejs */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px;
+}
+
+.nav-left {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #0056b3;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #003f7f;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #007BFF;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card .card-title {
+    color: #007BFF;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .card .card-subtitle {
+    color: #0056b3;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card .card-text {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  
+  .card button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Chatgpt the whole thing nothing is by me */
