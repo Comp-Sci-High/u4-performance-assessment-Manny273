@@ -8,7 +8,11 @@ body {
     padding: 0;
     text-align: center;
 }
-
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .navbar {
     display: flex;
     justify-content: space-between;

@@ -1,49 +1,59 @@
 /* Styling for index.html */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgb(0, 0, 0);
+    background-image: url("https://derschutze.com/cdn/shop/files/gal-barkan-dragons-2kupdated_1.png?v=1614790295");
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     margin: 0;
     text-align: center;
 }
 
-.login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
+/* Chatgpt the whole thing above */
 
-.login-container h2 {
-    color: #007BFF;
+img{
+    z-index: -1;
+    
 }
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+.name{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
 }
-
-.login-container button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+.mainSection{
+    display: flex;                  /* make it a flex container */
+    flex-direction: column;         /* stack children vertically */
+    align-items: center;            /* center children horizontally */
+    justify-content: center;        /* center children vertically inside the box */
+    background-color: black;
+    border: 1px solid rgb(220, 219, 219);   /* add a visible border */
+    border-radius: 12px;
+    padding: 20px;                  /* internal spacing */
+    width: 200px;                   /* fixed width for the box */
+    margin: auto; 
 }
-
-.login-container button:hover {
-    background-color: #0056b3;
+.mainSection a {
+    display: block;                 /* ensures each link takes its own line */
+    margin: 10px 0;                 /* vertical spacing between links */
+    padding: 10px 20px;             /* add some padding for better clickability */
+    color: whitesmoke;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.4s ease, font-style 0.4s ease;
 }
-
-/* Chatgpt the whole thing nothing is by me */
+.mainSection a:hover {
+    transform: scale(1.05);         /* makes the link pop out a bit */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);  /* subtle shadow for extra pop */
+    border-radius: 14%;
+    font-style:italic;
+}

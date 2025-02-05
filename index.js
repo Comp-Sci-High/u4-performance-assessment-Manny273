@@ -1,142 +1,180 @@
 const express = require('express')
 const app = express()
 
-const jobs = {
-   jobListings: [
-    {
-      name: "Software Engineer",
-      company: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      positionWanted: ["Frontend Developer", "Backend Developer"],
-      payPerHour: 60,
-      description: "Develop and maintain web applications with modern frameworks.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 9 AM - 5 PM",
-      benefits: ["Health Insurance", "401(k)", "Remote Work"]
-    },
-    {
-      name: "Graphic Designer",
-      company: "Creative Minds LLC",
-      location: "New York, NY",
-      positionWanted: ["UI Designer", "Illustrator"],
-      payPerHour: 40,
-      description: "Create visually appealing designs for digital and print media.",
-      type: "Part-time",
-      schedule: "Flexible Hours",
-      benefits: ["Work from Home", "Paid Leave"]
-    },
-    {
-      name: "Data Analyst",
-      company: "Data Solutions Co.",
-      location: "Austin, TX",
-      positionWanted: ["Data Scientist", "BI Analyst"],
-      payPerHour: 50,
-      description: "Analyze and interpret complex data to assist business decisions.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 8 AM - 4 PM",
-      benefits: ["Health Insurance", "Performance Bonuses"]
-    },
-    {
-      name: "Marketing Specialist",
-      company: "Brand Growth Ltd.",
-      location: "Los Angeles, CA",
-      positionWanted: ["SEO Specialist", "Social Media Manager"],
-      payPerHour: 45,
-      description: "Develop marketing campaigns and optimize online presence.",
-      type: "Part-time",
-      schedule: "Tuesday - Saturday, 10 AM - 3 PM",
-      benefits: ["Remote Work", "Paid Time Off"]
-    },
-    {
-      name: "Project Manager",
-      company: "Enterprise Solutions Inc.",
-      location: "Chicago, IL",
-      positionWanted: ["Agile Coach", "Scrum Master"],
-      payPerHour: 55,
-      description: "Manage and oversee project timelines and deliverables.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 9 AM - 6 PM",
-      benefits: ["Health Insurance", "Stock Options"]
-    },
-    {
-      name: "HR Coordinator",
-      company: "People First HR",
-      location: "Miami, FL",
-      positionWanted: ["Recruiter", "HR Specialist"],
-      payPerHour: 35,
-      description: "Assist in hiring processes and employee relations.",
-      type: "Part-time",
-      schedule: "Monday - Thursday, 10 AM - 2 PM",
-      benefits: ["401(k)", "Flexible Schedule"]
-    },
-    {
-      name: "Cybersecurity Analyst",
-      company: "SecureNet Solutions",
-      location: "Seattle, WA",
-      positionWanted: ["Security Engineer", "Ethical Hacker"],
-      payPerHour: 70,
-      description: "Monitor and secure network systems against threats.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 8 AM - 5 PM",
-      benefits: ["Health Insurance", "Remote Work", "Paid Training"]
-    },
-    {
-      name: "Content Writer",
-      company: "WriteWell Media",
-      location: "Denver, CO",
-      positionWanted: ["Copywriter", "Technical Writer"],
-      payPerHour: 30,
-      description: "Write engaging content for blogs, websites, and marketing.",
-      type: "Part-time",
-      schedule: "Flexible Hours",
-      benefits: ["Remote Work", "Paid Per Article"]
-    },
-    {
-      name: "UX Designer",
-      company: "Innovate UX",
-      location: "San Diego, CA",
-      positionWanted: ["Product Designer", "User Researcher"],
-      payPerHour: 50,
-      description: "Design intuitive and user-friendly digital experiences.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 9 AM - 5 PM",
-      benefits: ["Health Insurance", "Equity Options"]
-    },
-    {
-      name: "Customer Support Representative",
-      company: "HelpDesk Pro",
-      location: "Houston, TX",
-      positionWanted: ["Call Center Agent", "Technical Support"],
-      payPerHour: 25,
-      description: "Assist customers with inquiries and troubleshoot issues.",
-      type: "Part-time",
-      schedule: "Monday - Friday, 12 PM - 6 PM",
-      benefits: ["Paid Training", "Flexible Hours"]
-    },
-    {
-      name: "Operations Manager",
-      company: "BizFlow Operations",
-      location: "Boston, MA",
-      positionWanted: ["Logistics Coordinator", "Business Analyst"],
-      payPerHour: 60,
-      description: "Oversee daily operations and streamline business processes.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 8 AM - 5 PM",
-      benefits: ["Health Insurance", "Performance Bonuses"]
-    },
-    {
-      name: "Electrical Engineer",
-      company: "PowerTech Solutions",
-      location: "Phoenix, AZ",
-      positionWanted: ["Circuit Designer", "Power Systems Engineer"],
-      payPerHour: 65,
-      description: "Design and develop electrical systems and components.",
-      type: "Full-time",
-      schedule: "Monday - Friday, 9 AM - 6 PM",
-      benefits: ["Health Insurance", "401(k)"]
-    }
-  ],
+const clothingItems = [
+  {
+    category: "Tops",
+  // Top Pieces
+    items: [
+  {
+    name: "Classic White T-Shirt",
+    cost: 19.99,
+    sizes: ["S", "M", "L", "XL"],
+    description: "A timeless white t-shirt perfect for everyday wear.",
+    imageURL: "https://example.com/images/white-tshirt.jpg",
+    quantity: 50
+  },
+  {
+    name: "Black Hoodie",
+    cost: 39.99,
+    sizes: ["M", "L", "XL"],
+    description: "A warm and stylish black hoodie for casual outings.",
+    imageURL: "https://example.com/images/black-hoodie.jpg",
+    quantity: 30
+  },
+  {
+    name: "Striped Long Sleeve",
+    cost: 29.99,
+    sizes: ["S", "M", "L"],
+    description: "Comfortable long sleeve top featuring classic stripes.",
+    imageURL: "https://example.com/images/striped-long-sleeve.jpg",
+    quantity: 40
+  },
+  {
+    name: "Denim Jacket",
+    cost: 49.99,
+    sizes: ["M", "L", "XL"],
+    description: "A versatile denim jacket ideal for layering.",
+    imageURL: "https://example.com/images/denim-jacket.jpg",
+    quantity: 25
+  },
+  {
+    name: "Floral Blouse",
+    cost: 34.99,
+    sizes: ["S", "M"],
+    description: "An elegant floral blouse perfect for a chic look.",
+    imageURL: "https://example.com/images/floral-blouse.jpg",
+    quantity: 20
+  },
+  {
+    name: "Casual Polo Shirt",
+    cost: 24.99,
+    sizes: ["S", "M", "L", "XL"],
+    description: "A classic polo shirt for a relaxed, everyday style.",
+    imageURL: "https://example.com/images/polo-shirt.jpg",
+    quantity: 35
+  },
+  {
+    name: "V-Neck Sweater",
+    cost: 44.99,
+    sizes: ["M", "L", "XL"],
+    description: "A soft V-neck sweater that's perfect for cooler days.",
+    imageURL: "https://example.com/images/vneck-sweater.jpg",
+    quantity: 15
+  },
+  {
+    name: "Graphic Tee",
+    cost: 22.99,
+    sizes: ["S", "M", "L"],
+    description: "A trendy graphic tee with a bold design statement.",
+    imageURL: "https://example.com/images/graphic-tee.jpg",
+    quantity: 60
+  },
+  {
+    name: "Sleeveless Crop Top",
+    cost: 18.99,
+    sizes: ["S", "M"],
+    description: "A stylish crop top perfect for warm weather and layering.",
+    imageURL: "https://example.com/images/crop-top.jpg",
+    quantity: 45
+  },
+  {
+    name: "Lace Top",
+    cost: 27.99,
+    sizes: ["S", "M", "L"],
+    description: "A delicate lace top for a sophisticated, feminine look.",
+    imageURL: "https://example.com/images/lace-top.jpg",
+    quantity: 20
+  }
+  ]
+ },
+ {
+  category: "Bottoms",
+  items : [
+  // Bottom Pieces
+  {
+    name: "Slim Fit Jeans",
+    cost: 49.99,
+    sizes: ["S", "M", "L", "XL"],
+    description: "Slim fit jeans that offer a modern, streamlined silhouette.",
+    imageURL: "https://example.com/images/slim-fit-jeans.jpg",
+    quantity: 40
+  },
+  {
+    name: "Chino Pants",
+    cost: 39.99,
+    sizes: ["M", "L", "XL"],
+    description: "Comfortable chino pants suitable for both work and play.",
+    imageURL: "https://example.com/images/chino-pants.jpg",
+    quantity: 30
+  },
+  {
+    name: "Cargo Shorts",
+    cost: 29.99,
+    sizes: ["S", "M", "L"],
+    description: "Utility cargo shorts featuring multiple pockets for convenience.",
+    imageURL: "https://example.com/images/cargo-shorts.jpg",
+    quantity: 50
+  },
+  {
+    name: "Pleated Skirt",
+    cost: 34.99,
+    sizes: ["S", "M"],
+    description: "An elegant pleated skirt perfect for a graceful, chic look.",
+    imageURL: "https://example.com/images/pleated-skirt.jpg",
+    quantity: 25
+  },
+  {
+    name: "High-Waist Shorts",
+    cost: 26.99,
+    sizes: ["S", "M", "L"],
+    description: "Trendy high-waist shorts that flatter your figure.",
+    imageURL: "https://example.com/images/highwaist-shorts.jpg",
+    quantity: 35
+  },
+  {
+    name: "Jogger Pants",
+    cost: 44.99,
+    sizes: ["M", "L", "XL"],
+    description: "Comfortable jogger pants designed for a relaxed, sporty look.",
+    imageURL: "https://example.com/images/jogger-pants.jpg",
+    quantity: 30
+  },
+  {
+    name: "Denim Shorts",
+    cost: 24.99,
+    sizes: ["S", "M", "L"],
+    description: "Classic denim shorts perfect for summer and casual outings.",
+    imageURL: "https://example.com/images/denim-shorts.jpg",
+    quantity: 45
+  },
+  {
+    name: "Maxi Skirt",
+    cost: 39.99,
+    sizes: ["S", "M", "L"],
+    description: "A flowing maxi skirt that exudes a bohemian vibe.",
+    imageURL: "https://example.com/images/maxi-skirt.jpg",
+    quantity: 20
+  },
+  {
+    name: "Leather Pants",
+    cost: 59.99,
+    sizes: ["M", "L"],
+    description: "Edgy leather pants designed to make a bold fashion statement.",
+    imageURL: "https://example.com/images/leather-pants.jpg",
+    quantity: 15
+  },
+  {
+    name: "Culottes",
+    cost: 32.99,
+    sizes: ["S", "M", "L", "XL"],
+    description: "Stylish culottes that blend comfort with contemporary design.",
+    imageURL: "https://example.com/images/culottes.jpg",
+    quantity: 25
+  }
+ ]
 }
+];
 
 app.set("view engine","ejs")
 
@@ -153,13 +191,13 @@ app.get("/", (req,res) => {
   res.sendFile(__dirname + "/public/index.html")
 })
 
-app.get("/jobs", (req,res) => {
-  res.render("jobs.ejs", jobs)
+
+app.get("/tops", (req,res) => {
+  res.render("tops.ejs", clothingItems[0])
 })
 
-app.get("/jobs/:id", (req,res) => {
-  const jobNum = req.params.id;
-  res.render("jobs.ejs", jobs.jobListings[jobNum]);
+app.get("/bottoms", (req,res) => {
+  res.render("bottoms.ejs",clothingItems[1]);
 })
 
 
