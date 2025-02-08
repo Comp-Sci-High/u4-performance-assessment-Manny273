@@ -1,3 +1,5 @@
+
+
 /* Styling for index.html */
 html, body {
     height: 100%;
@@ -5,7 +7,9 @@ html, body {
   }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
     background-size: cover;
     background-position: center center;
     background-color: rgb(0, 0, 0);
@@ -25,21 +29,28 @@ img{
     z-index: -1;
     
 }
-.name{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-}
+
 .mainSection{
     display: flex;                  /* make it a flex container */
     flex-direction: column;         /* stack children vertically */
     align-items: center;            /* center children horizontally */
     justify-content: center;        /* center children vertically inside the box */
     background-color: black;
-    border: 1px solid rgb(220, 219, 219);   /* add a visible border */
+    border: 1px solid #737373;   /* add a visible border */
     border-radius: 12px;
     padding: 20px;                  /* internal spacing */
     width: 200px;                   /* fixed width for the box */
     margin: auto; 
+}
+@keyframes colorChange {
+    from {
+        background-color: transparent;
+        color: whitesmoke;
+    }
+    to {
+        background-color: white;
+        color: black;
+    }
 }
 .mainSection a {
     display: block;                 /* ensures each link takes its own line */
@@ -49,11 +60,36 @@ img{
     text-decoration: none;
     font-style: normal;
     border-radius: 0%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.4s ease, font-style 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.4s ease;
 }
 .mainSection a:hover {
     transform: scale(1.05);         /* makes the link pop out a bit */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);  /* subtle shadow for extra pop */
-    border-radius: 14%;
-    font-style:italic;
+    box-shadow: 0 4px 8px #ffffff4d;  /* subtle shadow for extra pop */
+    border-radius: 14px;
+    animation: colorChange 0.5s forwards;
+}
+.logoBox {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Match image width */
+    text-align: center;
+    margin-bottom: 7vh;
+}
+
+.logoBox .name {
+    position: absolute;
+    top: -15%;
+    width: 100%;
+    color: rgb(231, 231, 231);
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.logoBox img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border:1px solid #737373; /* Border around the image */
+    border-radius: 10px; /* Optional: rounded corners */
 }

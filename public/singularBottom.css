@@ -1,0 +1,224 @@
+body{
+  background-color: #221616;
+}
+.navbar {
+  position: absolute;              /* Sticks to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #221616;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Puts space between left and right sections */
+  align-items: center;
+  font-family: 'Cinzel', serif; /* Vintage, medieval feel */
+}
+
+/* Navbar left (logo/title) */
+.nav-left {
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+/* Navbar right container */
+.nav-right {
+  display: flex;
+  justify-content: space-evenly; /* Evenly distributes the nav links */
+  align-items: center;
+  flex: 1;
+  max-width: 400px;  /* Adjust as needed to control spacing */
+}
+
+/* Navbar links */
+.nav-button {
+  flex: 1;                /* Each link takes equal space */
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+}
+.nav-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #fff;
+}
+
+/* Define keyframes for the underline animation */
+@keyframes underline {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* On hover, trigger the underline animation */
+.nav-button:hover::after {
+  animation: underline 0.3s forwards;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 70px auto;
+}
+
+.images-and-sizes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.images-and-sizes .mainImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8); /* Added white box shadow */
+}
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.thumbnail-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform 0.3s, box-shadow 1s ease;
+}
+
+.thumbnail-container img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8); /* Added white box shadow */
+}
+
+
+.pick {
+  color: whitesmoke;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  font-family: 'Cinzel', serif;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+}
+
+.sizes span {
+  background-color: transparent;
+  color: whitesmoke;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s,box-shadow 1s ease;
+}
+.sizes span:hover {
+  transform: scale(1.1);
+  background-color: rgb(230, 230, 230);
+  color:rgb(0, 0, 0);
+  box-shadow: 0 0 10px white; /* Added white shadow effect */
+}
+
+.product {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+}
+
+.product h1 {
+  font-size: 2em;
+  margin: 0;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.product h2 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+}
+.product p {
+  text-align: center;
+}
+
+.description {
+  color: whitesmoke;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.add {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.5s, color 0.5s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.add:hover {
+  background-color: whitesmoke;
+  color: #221616;
+}
+
+.like {
+  background: whitesmoke ;
+  width: 8%;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.like span {
+  color: #e74c3c;
+  font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images-and-sizes img {
+    max-width: 90%;
+  }
+}

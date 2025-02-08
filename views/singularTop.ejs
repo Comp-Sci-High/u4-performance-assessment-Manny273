@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/singularTop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">Obscura</div>
+        <div class="nav-right">
+            <a href="/" class="nav-button">Home</a>
+            <a href="/tops" class="nav-button">Tops</a>
+            <a href="/bottoms" class="nav-button">Bottoms</a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="images-and-sizes">
+            <img id="mainImage" class="mainImage" alt ="pleaseWork" src="<%=imageURL%>">
+            <div class="thumbnail-container">
+                <img class="smallerImg" src="<%=imageURL%>" onclick="changeImage('<%=imageURL2%>')" alt="Thumbnail 1">
+                <img class="smallerImg" src="<%=imageURL2%>"onclick="changeImage('<%=imageURL%>')" alt="Thumbnail 2">
+                <img class="smallerImg" src="<%=imageURL%>"onclick="changeImage('<%=imageURL2%>')" alt="Thumbnail 3">
+                <img class="smallerImg" src="<%=imageURL2%>"onclick="changeImage('<%=imageURL%>')" alt="Thumbnail 4">
+              </div>
+            
+        </div>
+        <div class="product">
+            <h1><%=name%></h1>
+            <h2>$ <%=cost%></h2>
+            <p class="description">
+                <%=description%>
+            </p>
+            <div class="buttons">
+                <% if(quantity>0){%>
+                <button class="add">Add to Cart</button>
+                <%}else{%>
+                <button class="add">Sold Out</button>
+                <%}%>
+                <button class="like">
+                    <span>♥</span>
+                </button>
+            </div>
+            <p class="pick">Choose Size</p>
+            <div class="sizes">
+            <% for(let i = 0; i <sizes.length;i++){ %>
+            <span><%=sizes[i]%></span>
+            <%}%>
+           </div>
+        </div>
+    </div>
+    <script>
+        // Function to change the main image when a thumbnail is clicked
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
+    </script>
+</body>
+</html>
